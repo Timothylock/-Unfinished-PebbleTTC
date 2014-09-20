@@ -1,11 +1,10 @@
 {
     "appKeys": {},
     "capabilities": [
-        "location",
-        "configurable"
+        ""
     ],
     "companyName": "lock.k.timothy@gmail.com",
-    "longName": "PebbleTTC",
+    "longName": "TTC NextBus",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -29,11 +28,16 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/hackthenorth.png",
+                "name": "IMAGES_HACKTHENORTH_PNG",
+                "type": "png"
             }
         ]
     },
-    "shortName": "PebbleTTC",
-    "uuid": "1316c707-3d78-4d90-baa2-2562892f5058",
+    "shortName": "TTC NextBus",
+    "uuid": "0dd065ca-9e4c-412d-9da0-18c9ce3da7dd",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {

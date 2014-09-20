@@ -8,10 +8,10 @@ var UI = require('ui');
 var Vector2 = require('vector2');
 
 var main = new UI.Card({
-  title: 'PebbleTTC',
+  title: 'Pebble.js',
   icon: 'images/menu_icon.png',
-  subtitle: 'Find the next TTC bus/streetcar',
-  body: 'Press up to continue'
+  subtitle: 'Hello World!',
+  body: 'Press any button.'
 });
 
 main.show();
@@ -37,31 +37,22 @@ main.on('click', 'up', function(e) {
 });
 
 main.on('click', 'select', function(e) {
-  aboutWindow();
+  var wind = new UI.Window();
+  var textfield = new UI.Text({
+    position: new Vector2(0, 50),
+    size: new Vector2(144, 30),
+    font: 'gothic-24-bold',
+    text: 'Text Anywhere!',
+    textAlign: 'center'
+  });
+  wind.add(textfield);
+  wind.show();
 });
 
 main.on('click', 'down', function(e) {
-  aboutWindow();
+  var card = new UI.Card();
+  card.title('A Card');
+  card.subtitle('Is a Window');
+  card.body('The simplest window type in Pebble.js.');
+  card.show();
 });
-
-function aboutWindow() {
-    var wind = new UI.Window();
-  var title = new UI.Text({
-    position: new Vector2(0, 80),
-    size: new Vector2(144, 30),
-    font: 'gothic-28-bold',
-    text: 'PebbleTTC',
-    textAlign: 'center'
-  });
-  var subtitle = new UI.Text({
-    position: new Vector2(0, 120),
-    size: new Vector2(144, 30),
-    font: 'gothic-20-bold',
-    text: 'A hackathon project \n by Timothy Lock',
-    textAlign: 'center'
-  });
-  wind.add(title);
-  wind.add(subtitle);
-  wind.show();              // the function returns the product of p1 and p2
-}
-
