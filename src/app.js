@@ -4,14 +4,37 @@
  * This is where you write your app.
  */
 
+// Variables
 var UI = require('ui');
 var Vector2 = require('vector2');
+var route_stop = [];
+var eta = [];
+//var i;
 
+//App Test
+route_stop[0] = 'N 129A @ Hwy 7';
+route_stop[1] = 'S 129 @ Steeles';
+route_stop[2] = "W 34 @ McCowan";
+eta[0] = '1 min';
+eta[1] = '5 min';
+eta[2] = '3 min';
+
+// Recieving network messages
+Pebble.addEventListener("appmessage",
+  function(e) {
+    console.log("Received message: " + e.payload);
+    console.log(e);
+  }
+);
+
+
+
+// UI of Program
 var main = new UI.Card({
-  title: 'Pebble.js',
-  icon: 'images/menu_icon.png',
-  subtitle: 'Hello World!',
-  body: 'Press any button.'
+  title: 'PebbleTTC',
+  icon: 'images/iconProg.png',
+  subtitle: 'Find when the next TTC bus arrives',
+  body: 'Press up to continue'
 });
 
 main.show();
@@ -20,12 +43,20 @@ main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
     sections: [{
       items: [{
-        title: 'Pebble.js',
-        icon: 'images/menu_icon.png',
-        subtitle: 'Can do Menus'
+        title: route_stop[0],
+        subtitle: eta[0]
       }, {
-        title: 'Second Item',
-        subtitle: 'Subtitle Text'
+        title: route_stop[1],
+        subtitle: eta[1]
+      }, {
+        title: route_stop[2],
+        subtitle: eta[2]
+      }, {
+        title: route_stop[3],
+        subtitle: eta[3]
+      }, {
+        title: route_stop[4],
+        subtitle: eta[4]
       }]
     }]
   });
@@ -37,22 +68,49 @@ main.on('click', 'up', function(e) {
 });
 
 main.on('click', 'select', function(e) {
-  var wind = new UI.Window();
-  var textfield = new UI.Text({
-    position: new Vector2(0, 50),
-    size: new Vector2(144, 30),
-    font: 'gothic-24-bold',
-    text: 'Text Anywhere!',
-    textAlign: 'center'
-  });
-  wind.add(textfield);
-  wind.show();
+  aboutWindow();
 });
 
 main.on('click', 'down', function(e) {
-  var card = new UI.Card();
-  card.title('A Card');
-  card.subtitle('Is a Window');
-  card.body('The simplest window type in Pebble.js.');
-  card.show();
+  aboutWindow();
 });
+
+function aboutWindow(){
+  var wind = new UI.Window();
+  var title = new UI.Text({
+    position: new Vector2(0, 40),
+    size: new Vector2(144, 30),
+    font: 'gothic-28-bold',
+    text: 'PebbleTTC',
+    textAlign: 'center'
+  });
+  
+  var subtitle = new UI.Text({
+    position: new Vector2(0, 76),
+    size: new Vector2(144, 30),
+    font: 'gothic-18-bold',
+    text: 'A hackathon project Timothy Lock',
+    textAlign: 'center'
+  });
+  
+  var name2 = new UI.Text({
+    position: new Vector2(0, 110),
+    size: new Vector2(144, 30),
+    font: 'gothic-18-bold',
+    text: 'Jason Leung',
+    textAlign: 'center'
+  });
+  
+  var name3 = new UI.Text({
+    position: new Vector2(0, 127),
+    size: new Vector2(144, 30),
+    font: 'gothic-18-bold',
+    text: 'Jessica Ip',
+    textAlign: 'center'
+  });
+  wind.add(title);
+  wind.add(subtitle);
+  wind.add(name2);
+  wind.add(name3);
+  wind.show();
+}

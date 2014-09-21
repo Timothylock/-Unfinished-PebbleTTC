@@ -1,16 +1,15 @@
 {
     "appKeys": {},
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "lock.k.timothy@gmail.com",
-    "longName": "TTC NextBus",
+    "longName": "PebbleTTC",
     "projectType": "pebblejs",
     "resources": {
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -30,16 +29,17 @@
                 "type": "font"
             },
             {
-                "file": "images/hackthenorth.png",
-                "name": "IMAGES_HACKTHENORTH_PNG",
+                "file": "images/iconProg.png",
+                "menuIcon": true,
+                "name": "IMAGES_ICONPROG_PNG",
                 "type": "png"
             }
         ]
     },
-    "shortName": "TTC NextBus",
+    "shortName": "PebbleTTC",
     "uuid": "0dd065ca-9e4c-412d-9da0-18c9ce3da7dd",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "0.8",
     "watchapp": {
         "watchface": false
     }
