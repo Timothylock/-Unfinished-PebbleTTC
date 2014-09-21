@@ -40,6 +40,11 @@
     "uuid": "0dd065ca-9e4c-412d-9da0-18c9ce3da7dd",
     "versionCode": 1,
     "versionLabel": "0.8",
+
+    "appKeys": {
+      "firstKey":  0,
+      "secondKey": 1
+    },
     "watchapp": {
         "watchface": false
     }
